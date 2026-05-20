@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login RentalCar</title>
+  <link rel="stylesheet" href="styleCSS1.css">
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.
+  com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+  <div class="wrapper">
+  <h1>Login</h1>
+  <form id="form">
+  <input class="Username" type="text" placeholder="Username">
+  <input class="Email" type="Email" placeholder="Email">
+  <input class="Password" type="password" placeholder="Password">
+  <div class="recover">
+    <a href="#">Forgot Password?</a>
+  </div>
+  </form>
+  <a class="click" href="#">
+  <button class="but" onclick="chkInfo()"> Login</button>
+  </a>
+  <div class="member">
+  Not a member?<a href="html1.html">
+    Register Now
+  </a>
+
+  </div>
+  </div>
+  <script>
+    let Username = document.querySelector(".Username");
+    let email = document.querySelector(".Email")
+    let Password = document.querySelector(".Password");
+    let forme = document.getElementById('form');
+    let para = document.createElement("p");
+    forme.appendChild(para);
+    para.style.color = "red";
+    email.addEventListener("click",function(e){
+        document.querySelector("p").textContent="";
+    });
+    Username.addEventListener("click",function(e){
+        document.querySelector("p").textContent="";
+    });
+    Password.addEventListener("click",function(e){
+        document.querySelector("p").textContent="";
+    });
+    function chkInfo() {
+    regex=/^[A-Z]/
+    nb=/[0-9]/
+    regex2=/[@gmail.com]$/
+    if (email.value === "" || Username.value === "" || Password.value === "") {
+        para.innerHTML = "Veuillez remplir tous les champs obligatoires";
+       
+    } else if(regex.test(Username.value)!=1){
+        para.innerHTML = "le prenom doit commence par un letre majuscule";
+    }
+    else if(Password.value.length <= 8){
+        para.innerHTML = "password again(8 character)";
+    }
+    else if(regex2.test(email.value)!=1){
+  para.innerHTML ="Email again (@gmail.com)";
+}
+else if(email.value.length <= 20){
+    para.innerHTML = "Enter at least 20 characters in Email";
+}
+     else
+        document.querySelector(".click").href="html.html";
+    }
+    
+      </script>
+      </body>
+</html>    

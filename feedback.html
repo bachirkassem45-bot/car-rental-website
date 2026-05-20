@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FEEDBACK</title>
+        <link rel="stylesheet" href="feedback.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">  
+    </head>
+    <body>
+  
+  <div class="first">
+        <h2 style=" margin-bottom:80px ; ">
+            Share your feedback for a chance to win a meal at "RentalCar!"></h2>
+        
+      
+     <form id="myForm" class="myForm">
+        <div class="tableau">
+        <table class="svr">
+            <tr>
+                <td>Choose Your Favourite Car :</td>
+                <td>
+                    <select class="red" name="CARS" id="CARS">
+                        <option value=""></option>
+                    <optgroup label="honda">                     
+                        <option value="civic">Civic 2018</option>
+                        <option value="civic"> Civic 2018</option>
+                        <option value="civic"> Civic 2018</option>
+                        <option value="civic">Civic 2018</option>
+                    </optgroup>
+                    <optgroup label="BMW">
+                        <option value="BMW">M4 2010</option>
+                        <option value="BMW">M5 2019</option>
+                        <option value="BMW">M4 2021</option>
+                        <option value="BMW">M3 2019</option>
+                    <optgroup label="Mercedes Benz">
+                        <option value="Mercedes">Mercedes s class</option>
+                        <option value="Mercedes">Mercedes c class</option>
+                    </optgroup>
+                    </select></td>
+             <tr>                           
+                </td>
+                <td>Choose Your Favourite range:</td>
+                <td>
+                    <select class="red" name="range" id="range">
+                        <option value="" ></option>
+                        <optgroup label="range rover">
+                            <option value="svr">svr 2018</option>
+                            <option value="svr">hse sport 2018</option>
+                            <option value="svr">hst sport 2018</option>   
+                        </optgroup>
+                        <optgroup label="G-class">
+                            <option value="G-class">G-class 2019</option>
+                            <option value="G-class">G-class 1961</option>
+                            <option value="G-class">G-class 2022</option>
+                        </optgroup>
+                     </select>
+                 </td>   
+             </tr>
+             <tr>
+                <td>Choose Your Favorite Moto:</td>
+                <td><input class="checbox" type="checkbox" name="Moto"><label>Lorem ipsum dolor sit</label><BR>
+                    <input class="checbox" type="checkbox" name="Moto"><label>Lorem ipsum dolor sit</label><BR>
+                    <input class="checbox" type="checkbox" name="Moto"><label>Lorem ipsum dolor sit</label><BR>
+                    <input class="checbox" type="checkbox" name="Moto"><label>Lorem ipsum dolor sit </label>
+                </td>    
+             </tr>
+             </table>
+             <table class="sign">
+            <tr>
+                <td>Enter your first name:</td>
+                <td><input type="text" id="fname" placeholder="Username" class="red"></td>
+            </tr>
+            <tr>
+                <td>Enter your last name:</td>
+                <td><input type="text" id="lname" placeholder="Lastname" class="red"></td>
+            </tr>
+            <tr>
+                <td>Enter your email:</td>
+                <td><input type="email" id="email" placeholder="example@gmail.com" class="red"></td>
+            </tr>
+            <tr>
+                <td>Enter your email password:</td>
+                <td><input type="password" id="pass" placeholder="Password" class="red"></td>
+            </tr>
+            <tr>   
+                <td>Enter your phone number:</td>
+                <td><input class="red" type="text" id="phonenb" placeholder="Example: 12-123 123" class="red"></td>
+            </tr>
+            <tr>
+                <td>Add Your Comments:</td>
+                <td><textarea name="comments" rows="8" cols="20" id="text" placeholder="comment" class="red"></textarea></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="html.html" style="color: rgb(blue);">Back to Home page</a>
+                </td>
+                <td>
+                    <input class="submit" type="reset" value="Reset">
+                
+                    <input class="submit" type="submit"  value="submit">
+                </td>
+            </tr> 
+        </table>
+        
+     
+    </div>
+    
+        </div>
+            </table>
+            
+     </form>
+     <div class="social">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+     </div>
+     
+        
+    </div>
+    
+<script>
+let d = document.getElementById('myForm');
+console.log(d)
+d.addEventListener("submit",function(event){
+   let isValid = test();
+   console.log(isValid)
+   if(!isValid)
+    event.preventDefault();
+});
+document.getElementById("fname").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("lname").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("email").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("pass").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("phonenb").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("text").addEventListener("focus",function(e){
+    e.target.style.backgroundColor="green";
+ });
+ document.getElementById("fname").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ document.getElementById("lname").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ document.getElementById("email").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ document.getElementById("pass").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ document.getElementById("phonenb").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ document.getElementById("text").addEventListener("blur",function(e){
+    e.target.style.backgroundColor="white";
+ });
+ 
+function test(){
+    var fname=document.getElementById("fname").value;
+    var lname=document.getElementById("lname").value;
+    var email=document.getElementById("email").value;
+    var pass=document.getElementById("pass").value;
+    var phonenb=document.getElementById("phonenb").value;
+   var CARS=document.getElementById("CARS").value;
+    var range=document.getElementById("range").value;
+   if(CARS==="")
+   {
+    alert("Oups!You didn't choose your favorite CARS!");
+    return false;
+   }
+   
+   if(range==="")
+   {
+     alert("Please make sure to choose your favorite range.");
+     return false;
+   }
+   if( fname==="" || lname==="" || email==="" || pass==="" || phonenb==="" )
+    {
+        alert("Please,make sure to fill all fields");
+        return false;
+    }
+    var checkboxes=document.getElementsByName("Moto");
+    var check=0;
+    for(var i=0;i<checkboxes.length;i++)
+    {
+        if(checkboxes[i].checked)
+        {
+            check=1;
+            break;
+        }
+    }
+        if(check===0)
+        {alert("oups!you forgot to choose your favorite moto");
+          return false;
+        }
+    
+    
+    if(fname[0].search(/[A-Z]/)==1)
+    { 
+        alert("The first name starts with capital letter");
+        return false;
+    }
+    if(lname[0].search(/[A-Z]/)==1)
+    { 
+        alert("The last name starts with capital letter");
+        return false;
+    }
+    if(fname.search(/[0-9]/)!=-1 || lname.search(/[0-9]/)!=-1)
+    {
+        alert("The first and Last name must not contain a number")
+        return false;
+    }
+    if(pass.length<8 || pass.length>15)
+    {
+        alert("the password must contains 8 to 15 characters");
+        return false;
+    }
+    if(phonenb.search(/^[0-9]{8}$/)==-1)
+    {  
+       alert("The phone number must contains 8 numbers only!");
+        return false;
+    }
+    if(pass.search(/[A-Z]/)==-1 || pass.search(/[a-z]/)==-1 || pass(/[0-9]/)==-1)
+    {
+        alert("the password must contains different characters (capital and small letters and numbers)");
+        return false;
+    }
+    
+  if(phonenb.search(/^[0-9]{8}$/)==-1)
+    {  
+       alert("The phone number must contains 8 numbers only!");
+        return false;
+    }
+   else {return true;}
+}
+</script>
+    </body>
+</html>

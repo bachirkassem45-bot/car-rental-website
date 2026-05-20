@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sign in RentalCar</title>
+  <link rel="stylesheet" href="styleCSS1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.
+  com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+  <div class="wrapper">
+  <h1>Sign Up</h1>
+  <form method="post" action="" id="form">
+  <input class="Username" type="text" placeholder="Username">
+  <input class="Name" type="text" placeholder="Name">
+  <input class="Email" type="email" placeholder="Email">
+  <input class="Password" type="password" placeholder="Password">
+  <input class="repassword" type="password" placeholder="Re-EnterPassword">
+  </form>
+  <div class="terms">
+  <input type="checkbox" id="checkbox">
+  <label for="checbox">I agree to these <a href="#">Terms & Conditionsk/ ></label>
+  </div>
+  <a class="click" href="#">
+  <button class="but" onclick="chkInfo()">Sign up</button>
+</a>
+  <div class="member">
+  Already a member?<a href="login.html">
+    Login here 
+  </a>
+
+  </div>
+  </div>
+  <script>
+let Username = document.querySelector(".Username");
+let Name = document.querySelector(".Name");
+let email = document.querySelector(".Email")
+let Password = document.querySelector(".Password");
+let repassword = document.querySelector('.repassword');
+let forme = document.getElementById('form');
+let para = document.createElement("p");
+forme.appendChild(para);
+para.style.color = "red";
+Name.addEventListener("click",function(e){
+    document.querySelector("p").textContent="";
+});
+Username.addEventListener("click",function(e){
+    document.querySelector("p").textContent="";
+});
+Password.addEventListener("click",function(e){
+    document.querySelector("p").textContent="";
+});
+repassword.addEventListener("click",function(e){
+    document.querySelector("p").textContent="";
+});
+function chkInfo() {
+regex=/^[A-Z]/
+nb=/[0-9]/
+regex2=/[@gmail.com]$/
+regex3=/[0-9]$/
+if (Name.value === "" || Username.value === "" || Password.value === "" || repassword.value === "") {
+    para.innerHTML = "Veuillez remplir tous les champs obligatoires";
+  
+   
+} else if(regex.test(Username.value)!=1){
+    para.innerHTML = "le prenom doit commence par un letre majuscule";
+}
+else if(regex3.test(Name.value)!=1){
+    para.innerHTML = "Enter the name with a number at the end";
+}
+else if(Password.value.length <= 8){
+    para.innerHTML = "password again";
+}
+else if(Password.value !== repassword.value){
+    para.innerHTML ="Please retype your password correctly";
+}
+else if(regex2.test(email.value)!=1){
+  para.innerHTML ="Email again";
+}
+else if(email.value.length <= 20){
+    para.innerHTML = "Enter at least 20 characters in Email";
+}
+ else
+    document.querySelector(".click").href="html.html";
+}
+
+  </script>
+  </body>
+</html>
